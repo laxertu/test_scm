@@ -1,11 +1,5 @@
 from git import Repo
-import setuptools
-from importlib.metadata import version, PackageNotFoundError
 import setuptools_scm
-
-
-
-
 def myversion(v: setuptools_scm.ScmVersion):
     return setuptools_scm.version.guess_next_version(v)
 
@@ -18,7 +12,7 @@ print("")
 
 v = setuptools_scm.get_version()
 print("on branch", repo.active_branch)
-#print(v)
+print("raw version", v)
 if str(repo.active_branch) == "master":
     v = ".".join(v.split(".")[0:3])
 else:
@@ -26,6 +20,11 @@ else:
     v = tmp[0]
 
 print("guessed", v)
+
+
+
+
+
 
 exit(0)
 

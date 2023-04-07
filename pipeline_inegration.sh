@@ -8,5 +8,3 @@ echo "git tag ${VERSION}"
 git tag $VERSION
 git push --tags
 fi
-
-#echo "${OUTPUT}"

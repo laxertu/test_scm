@@ -17,3 +17,4 @@ else:
     v = v.split("+")[0].replace("dev", "rc")
 
 print("Guessed", v)
+

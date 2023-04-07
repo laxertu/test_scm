@@ -10,14 +10,24 @@ def myversion(v: setuptools_scm.ScmVersion):
     return setuptools_scm.version.guess_next_version(v)
 
 repo = Repo()
+
+print("tags:")
+for t in repo.tags:
+    print(t.name)
+print("")
+
 v = setuptools_scm.get_version()
-if repo.active_branch == "master":
-    v = v.split(".")[0:3]
-    print(v)
+#print(repo.active_branch)
+#print(v)
+if str(repo.active_branch) == "master":
+    v = ".".join(v.split(".")[0:3])
 else:
-    print(v)
+    tmp = v.split("+")
+    v = tmp[0]
 
+print("guessed", v)
 
+exit(0)
 
 print("--")
 

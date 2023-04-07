@@ -13,9 +13,6 @@ if str(repo.active_branch) == "master":
 
 else:
     v = ""
-
-
-
 print(v)
 
 

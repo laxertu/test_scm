@@ -17,7 +17,7 @@ for t in repo.tags:
 print("")
 
 v = setuptools_scm.get_version()
-#print(repo.active_branch)
+print("on branch", repo.active_branch)
 #print(v)
 if str(repo.active_branch) == "master":
     v = ".".join(v.split(".")[0:3])

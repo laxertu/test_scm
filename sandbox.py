@@ -17,7 +17,7 @@ if str(repo.active_branch) == "master":
     v = ".".join(v.split(".")[0:3])
 else:
     tmp = v.split("+")
-    v = tmp[0]
+    v = tmp[0].replace("dev", "rc")
 
 print("guessed", v)
 

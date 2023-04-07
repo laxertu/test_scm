@@ -1,7 +1,5 @@
 from git import Repo
 import setuptools_scm
-def myversion(v: setuptools_scm.ScmVersion):
-    return setuptools_scm.version.guess_next_version(v)
 
 repo = Repo()
 
@@ -16,8 +14,7 @@ print("raw version", v)
 if str(repo.active_branch) == "master":
     v = ".".join(v.split(".")[0:3])
 else:
-    tmp = v.split("+")
-    v = tmp[0].replace("dev", "rc")
+    v = v.split("+")[0].replace("dev", "rc")
 
 print("guessed", v)
 

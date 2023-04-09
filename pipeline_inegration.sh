@@ -8,4 +8,5 @@ if [ "$REPOSITORY" == "master" ]; then
   git tag $VERSION
 fi
 
+echo "Package version"
 echo "${VERSION}"

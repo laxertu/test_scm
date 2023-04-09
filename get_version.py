@@ -7,4 +7,4 @@ if str(branch) == "master":
     tmp = ".".join(v.split(".")[0:3])
     v = ".".join(v.split(".")[0:3])
 
-print(v)
+print("packege version", v)

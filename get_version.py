@@ -2,9 +2,9 @@ from git import Repo
 from setuptools_scm import get_version
 
 branch = Repo().active_branch
+v = get_version()
 if str(branch) == "master":
-    v = get_version()
+    tmp = ".".join(v.split(".")[0:3])
     v = ".".join(v.split(".")[0:3])
-    print(".".join(v.split(".")[0:3]))
-else:
-    print("")
+
+print(v)

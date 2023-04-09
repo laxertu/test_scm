@@ -16,5 +16,5 @@ if str(repo.active_branch) == "master":
 else:
     v = v.split("+")[0].replace("dev", "rc")
 
-print("Guessed", v)
+print("Next Stable version", v)
 

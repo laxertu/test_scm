@@ -6,7 +6,10 @@ repo = Repo()
 print("Tags:")
 for t in repo.tags:
     print(t.name)
+    print(t.tag)
 print("")
+
+#tags = sorted(repo.tags, key=lambda t: t.tag.tagged_date)
 
 v = setuptools_scm.get_version()
 print("On branch", repo.active_branch)

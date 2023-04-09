@@ -1,10 +1,12 @@
 #!/bin/bash
 
+REPOSITORY = $(python get_current_branch.py)
 VERSION=$(python get_version.py)
 
-if [ "$VERSION" != "" ]; then
-echo "${VERSION}"
-echo "git tag ${VERSION}"
-git tag $VERSION
-git push --tags
+if [ "$REPOSITORY" == "master" ]; then
+  echo "git tag ${VERSION}"
+  git tag $VERSION
+  git push --tags
 fi
+
+echo "${VERSION}"

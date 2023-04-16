@@ -17,11 +17,7 @@ def myversion():
         print(str(version.tag))
         print(guess_next_date_ver(version=version))
         current_version = get_version(version_scheme="no-guess-dev")
-        if str(version.tag) == current_version:
-            v = guess_next_date_ver(version)
-        else:
-            v = guess_next_date_ver(version)
-
+        v = guess_next_date_ver(version)
         print("version to install", v)
         return v
 

@@ -14,11 +14,8 @@ def myversion():
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         #version.config.fallback_version = fallback_version
-        print(str(version.tag))
-        print(guess_next_date_ver(version=version))
         current_version = get_version(version_scheme="no-guess-dev")
         v = guess_next_date_ver(version)
-        print("version to install", v)
         return v
 
     return {

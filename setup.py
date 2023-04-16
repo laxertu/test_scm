@@ -14,7 +14,6 @@ def myversion():
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         from setuptools_scm.version import SEMVER_MINOR, guess_next_simple_semver, release_branch_semver_version
-        print("zzz", version.format_next_version(guess_next_date_ver, fmt="{guessed}"))
         if version.branch == "master":
             v = version.format_next_version(guess_next_date_ver, fmt="{guessed}")
         else:

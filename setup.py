@@ -2,6 +2,8 @@ import setuptools
 import datetime
 
 import setuptools_scm.version
+import pkg_resources
+version = pkg_resources.require("test_scm")[0].version
 
 VERSION_DATE_FORMAT = "%Y.%-m.%-d"
 
@@ -16,8 +18,8 @@ def myversion():
             return v
 
         if version.branch == 'master':
-            if version.distance > 0:
-                v = guess_next_date_ver(version)
+            print("distance", version.distance)
+            v = guess_next_date_ver(version)
         else:
             v = get_version()
         return v

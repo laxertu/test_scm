@@ -13,11 +13,7 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        if version.branch == "master":
-            v = guess_next_date_ver(version)
-        else:
-            v = get_version(version_scheme="no-guess-dev")
-        return v
+        return guess_next_date_ver(version)
 
     return {
         'version_scheme': get_next_version,

@@ -8,6 +8,7 @@ if [ "$REPOSITORY" == "master" ]; then
     if [ $(git tag -l "$VERSION") ]; then
       echo "WARNING VERSION ALREADY EXISTS"
   else
+      echo "aaaaaaaa ${VERSION}"
       git tag $VERSION
   fi
 fi

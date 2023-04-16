@@ -5,12 +5,8 @@ REPOSITORY=$(git rev-parse --abbrev-ref HEAD)
 VERSION=$(python setup.py --version)
 
 if [ "$REPOSITORY" == "master" ]; then
-    if [ $(git tag -l "$VERSION") ]; then
-      echo "WARNING VERSION ALREADY EXISTS"
-  else
-      echo "aaaaaaaa ${VERSION}"
-      git tag $VERSION
-  fi
+  echo "aaaaaaaa ${VERSION}"
+  git tag $VERSION
 fi
 
 echo "Package version"

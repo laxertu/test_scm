@@ -30,6 +30,6 @@ def myversion():
 setuptools.setup(
     name="test_scm",
     use_scm_version=myversion,
-    packages=setuptools.find_packages()
+    packages=setuptools.find_packages(),
 )
 

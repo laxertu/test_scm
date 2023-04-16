@@ -13,7 +13,7 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        return guess_next_date_ver(version)
+        return version.format_next_version(guess_next_date_ver, fmt="{guessed}")
 
     return {
         'version_scheme': get_next_version,

@@ -12,6 +12,9 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
+
+        print("current distance", version.distance)
+
         if str(version.tag) == '0.0':
             v = f"{datetime.datetime.now().strftime(VERSION_DATE_FORMAT)}.1"
             return v

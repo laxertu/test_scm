@@ -13,7 +13,9 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        current_version = get_version()
+        print(get_version())
+        print(str(version.tag))
+        current_version = get_version(version_scheme="no-guess-dev")
         if str(version.tag) == current_version:
             v = guess_next_date_ver(version)
         else:

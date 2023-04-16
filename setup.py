@@ -13,8 +13,6 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        if version.tag is None:
-            version.tag = datetime.datetime.now().strftime("%Y.%-m.%-d")
         #version.config.fallback_version = fallback_version
         current_version = get_version(version_scheme="no-guess-dev")
         v = guess_next_date_ver(version)

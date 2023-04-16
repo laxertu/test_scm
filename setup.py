@@ -13,12 +13,10 @@ def myversion():
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         if str(version.tag) == '0.0':
-
             v = f"{datetime.datetime.now().strftime(VERSION_DATE_FORMAT)}.1"
             return v
 
         if version.branch == 'master':
-            print("distance", version.distance)
             v = guess_next_date_ver(version)
         else:
             v = get_version()

@@ -2,7 +2,7 @@
 
 REPOSITORY=$(git rev-parse --abbrev-ref HEAD)
 # git describe --tags --abbrev=0
-VERSION=$(python get_version.py)
+VERSION=$(python setup.py --version)
 
 if [ "$REPOSITORY" == "master" ]; then
   echo "aaaaaaaa ${VERSION}"

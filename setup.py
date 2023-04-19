@@ -14,25 +14,10 @@ def myversion():
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         from setuptools_scm.version import SEMVER_MINOR, guess_next_simple_semver, release_branch_semver_version, guess_next_version
-        #v = version.format_next_version(guess_next_simple_semver, fmt="{guessed}", retain=SEMVER_MINOR)
-
-        return version.format_next_version(release_branch_semver_version, fmt="{guessed}")
-
-        v = release_branch_semver_version(version)
-        if v == version.format_next_version(guess_next_simple_semver, retain=SEMVER_MINOR):
-            return version.format_next_version(release_branch_semver_version, fmt="{guessed}", retain=SEMVER_MINOR)
-
-        return v
-        """
-        v = release_branch_semver_version(version)
-        print(v)
-        print(version.format_next_version(guess_next_date_ver))
-        print("zzz", version.format_next_version(guess_next_date_ver, fmt="{guessed}"))
-        if v == version.format_next_version(guess_next_date_ver):
-            return version.format_next_version(guess_next_date_ver, fmt="{guessed}")
+        v = get_version()
         return v
         #return version.format_next_version(guess_next_date_ver, fmt="{guessed}")
-        """
+
 
     return {
         'version_scheme': get_next_version,

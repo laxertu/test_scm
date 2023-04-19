@@ -2,13 +2,12 @@
 
 REPOSITORY=$(git rev-parse --abbrev-ref HEAD)
 # git describe --tags --abbrev=0
-VERSION=$(python get_version.py)
 
-if [ "$VERSION" != ""]; then
-    if [ "$REPOSITORY" == "master"]; then
-    git tag $VERSION
-  fi
+if [ "$REPOSITORY" = "master" ]; then
+  CURRENT_VERSION = $(python setup.py --version)
+  VERSION=$(python get_version.py ${CURRENT_VERSION})
+  git tag $VERSION
+  echo "tagged package version"
+  echo "${VERSION}"
 fi
 
-echo "Package version"
-echo "${VERSION}"

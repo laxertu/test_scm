@@ -18,6 +18,7 @@ def myversion():
         #v = guess_next_date_ver(version)
         x = guess_next_date_ver(version)
         print("eeeeeeeee", x)
+        return x
         return version.format_next_version(guess_next_date_ver, fmt="{guessed}")
 
 

@@ -16,7 +16,8 @@ def myversion():
         from setuptools_scm.version import SEMVER_MINOR, guess_next_simple_semver, release_branch_semver_version, guess_next_version
         #v = get_version()
         #v = guess_next_date_ver(version)
-        #return v
+        x = guess_next_date_ver(version)
+        print("eeeeeeeee", x)
         return version.format_next_version(guess_next_date_ver, fmt="{guessed}")
 
 

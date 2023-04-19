@@ -1,9 +1,7 @@
 import sys
 
-v = sys.argv[1]
-p = v.split(".")
+p = sys.argv[1].split(".")
 r = ''
 if len(p) == 5:
-    n = int(p[-2]) + 1
-    r = f"{'.'.join(p[:-2])}.{n}"
+    r = f"{'.'.join(p[:-1])}"
 print(r)

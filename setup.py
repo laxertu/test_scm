@@ -11,7 +11,7 @@ def myversion():
 
     return {
         'version_scheme': get_next_version,
-        #'local_scheme': 'no-local-version',
+        'local_scheme': 'no-local-version',
     }
 
 

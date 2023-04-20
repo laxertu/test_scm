@@ -4,9 +4,10 @@ import setuptools_scm.version
 
 def myversion():
     from setuptools_scm.version import guess_next_date_ver
+    from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        return version.format_next_version(guess_next_date_ver)
+        return get_version() if version.branch == "master" else version.format_next_version(guess_next_date_ver)
 
 
     return {

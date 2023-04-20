@@ -1,7 +1,5 @@
 import sys
 
 p = sys.argv[1].split(".")
-r = ''
-if len(p) == 5:
-    r = f"{'.'.join(p[:-1])}"
+r = f"{p[0]}.{p[1]}.{p[2]}.{int(p[3]) + 1}"
 print(r)

@@ -1,6 +1,5 @@
 import setuptools
 import setuptools_scm.version
-import pkg_resources
 
 
 def myversion():

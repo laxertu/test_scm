@@ -1,25 +1,13 @@
 import setuptools
-import datetime
-from setuptools_scm import get_version
-
 import setuptools_scm.version
 import pkg_resources
-version = pkg_resources.require("test_scm")[0].version
 
-VERSION_DATE_FORMAT = "%Y.%-m.%-d"
 
 def myversion():
     from setuptools_scm.version import guess_next_date_ver
-    from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        from setuptools_scm.version import SEMVER_MINOR, guess_next_simple_semver, release_branch_semver_version, guess_next_version
-        #v = get_version()
-        #v = guess_next_date_ver(version)
-        x = guess_next_date_ver(version)
-        print("eeeeeeeee", x)
-        return x
-        return version.format_next_version(guess_next_date_ver, fmt="{guessed}")
+        return guess_next_date_ver(version)
 
 
     return {
@@ -33,4 +21,3 @@ setuptools.setup(
     use_scm_version=myversion,
     packages=setuptools.find_packages(),
 )
-

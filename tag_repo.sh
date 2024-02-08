@@ -13,8 +13,7 @@ if [ "$repository" = "master" ]; then
 
 
   if [ "$package_next_version" != "" ]; then
-    git tag $package_next_version
-    echo "tagged package version"
+    git tag "$package_next_version"
     echo "${package_next_version}"
   fi
 fi

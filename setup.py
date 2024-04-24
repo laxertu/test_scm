@@ -9,7 +9,7 @@ def myversion():
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         return get_version(local_scheme="no-local-version") \
             if version.branch == "master" else \
-            version.format_next_version(guess_next_date_ver)
+            version.format_next_version(guess_next_date_ver, fmt='%Y.%m.%d')
 
 
     return {

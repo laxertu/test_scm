@@ -1,5 +1,3 @@
-import datetime
-
 import setuptools
 import setuptools_scm.version
 
@@ -8,7 +6,7 @@ def myversion():
     from setuptools_scm.version import guess_next_date_ver
     from setuptools_scm import get_version
 
-    def get_next_version(version: setuptools_scm.version.ScmVersion):
+    def calculate(version: setuptools_scm.version.ScmVersion):
         # fallback_version="0.0.0"
         if version.distance is None:
             return get_version()
@@ -16,8 +14,7 @@ def myversion():
             return version.format_next_version(guess_next_date_ver)
 
     return {
-        'version_scheme': get_next_version,
-        #'local_scheme': 'no-local-version',
+        'version_scheme': calculate
     }
 
 

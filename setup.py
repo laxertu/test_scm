@@ -13,7 +13,12 @@ def myversion():
         if version.distance is None:
             return get_version()
         else:
-            return version.format_next_version(guess_next_date_ver, date_fmt="%Y.%m.%d")
+            return version.format_next_version(
+                guess_next_date_ver,
+                date_fmt="%Y.%m.%d",
+                node_date=version.node_date,
+                version_cls=version.config.version_cls,
+            )
 
     return {
         'version_scheme': calculate

@@ -15,7 +15,6 @@ def myversion():
         if version.branch == "master" and version.distance is None:
             return get_version()
         else:
-            print(version.distance)
             return version.format_next_version(guess_next_date_ver)
 
 

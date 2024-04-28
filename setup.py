@@ -13,7 +13,7 @@ def myversion():
         # fallback_version="0.0.0"
         return get_version(version_scheme=guess_next_date_ver) \
             if version.branch == "master" else \
-            version.format_next_version(guess_next_date_ver, fmt='%Y.%m.%d')
+            version.format_next_version(guess_next_date_ver, fmt='%y.%m.%d')
 
 
     return {

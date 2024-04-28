@@ -11,9 +11,14 @@ def myversion():
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         version.time = datetime.datetime.now()
         # fallback_version="0.0.0"
-        return get_version(version_scheme=guess_next_date_ver) \
-            if version.branch == "master" else \
-            version.format_next_version(guess_next_date_ver, fmt='%y.%m.%d')
+
+        if version.branch == "master":
+            if version.distance == 0:
+                return get_version(version_scheme=guess_next_date_ver).split("+")[0]
+            else:
+                return get_version(version_scheme=guess_next_date_ver)
+        else:
+            return version.format_next_version(guess_next_date_ver, fmt='%y.%m.%d')
 
 
     return {

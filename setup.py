@@ -11,7 +11,7 @@ def myversion():
     def get_next_version(version: setuptools_scm.version.ScmVersion):
         version.time = datetime.datetime.now()
         # fallback_version="0.0.0"
-
+        print(version.distance)
         if version.branch == "master":
             if version.distance == 0:
                 return get_version()

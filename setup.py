@@ -15,7 +15,11 @@ def myversion():
         if version.branch == "master" and version.distance is None:
             return get_version()
         else:
-            return version.format_next_version(guess_next_date_ver)
+            if version.distance is None:
+                return version.tag
+            else:
+                return version.format_next_version(guess_next_date_ver)
+
 
 
     return {

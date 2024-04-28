@@ -14,7 +14,7 @@ def myversion():
 
         if version.branch == "master":
             if version.distance == 0:
-                return get_version(version_scheme=guess_next_date_ver).split("+")[0]
+                return get_version()
             else:
                 return get_version(version_scheme=guess_next_date_ver)
         else:

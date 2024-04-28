@@ -16,7 +16,7 @@ def myversion():
             return get_version()
         else:
             if version.distance is None:
-                return version.tag
+                return get_version()
             else:
                 return version.format_next_version(guess_next_date_ver)
 

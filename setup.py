@@ -9,7 +9,6 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        #version.time = datetime.datetime.now()
         # fallback_version="0.0.0"
         if version.distance is None:
             return get_version()

@@ -1,3 +1,5 @@
+import datetime
+
 import setuptools
 import setuptools_scm.version
 
@@ -7,7 +9,8 @@ def myversion():
     from setuptools_scm import get_version
 
     def get_next_version(version: setuptools_scm.version.ScmVersion):
-        return get_version(local_scheme="no-local-version") \
+        version.time = datetime.datetime.now()
+        return get_version(local_scheme="no-local-version", version_scheme=guess_next_date_ver) \
             if version.branch == "master" else \
             version.format_next_version(guess_next_date_ver, fmt='%Y.%m.%d')
 
